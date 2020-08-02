@@ -1,0 +1,3 @@
+- Get header to display properly on mobile
+- Resize image based on device being used
+- Use one other model type except for posts (e.g. user info for a contact form; premium posts?)

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>CHANGE THIS TITLE</title>
+    <meta name="author" content="Thomas Davies">
+    <meta name="description" content="This website holds my blog posts and CV for the bridging coursework">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/base.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    {% block headtags %}{% endblock %}
+</head>
+
+<body>
+    {% comment %} Responsive header adapted from the tutorial at https://www.youtube.com/watch?v=GxwHXxumdQk&t=633s {% endcomment %}
+    <header>
+        <div class="inner_header"> 
+            <div class="logo_container">
+                <h1>MY<span>BLOG</span><h1>
+            </div>
+
+            <ul class="navigation">
+                <a href="{% url 'home' %}"><li id="home_link">Home</li></a>
+                <a href="{% url 'about' %}"><li id="about_link">About</li></a>
+                <a href="{% url 'posts' %}"><li id="posts_link">Posts</li></a>
+                <a href="{% url 'gallery' %}"><li id="gallery_link">Gallery</li></a>
+                <a href="{% url 'contact' %}"><li id="contact_link">Contact</li></a>
+            </ul>
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>
