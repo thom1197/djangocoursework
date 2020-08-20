@@ -4,9 +4,12 @@ from django.utils import timezone
 
 # Create your models here.
 class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    subtitle = models.CharField(max_length=500)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    header_image = models.ImageField(blank=True, null=True, upload_to='blog/%Y/%m/%d')
+    header_image_subtitle = models.CharField(blank=True, max_length=500)
+    text = models.TextField(blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 

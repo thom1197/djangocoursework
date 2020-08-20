@@ -1,3 +1,138 @@
 #posts_link {
     text-decoration: underline;
 }
+
+body {
+    background-color: #A0D2EB;
+}
+
+.container {
+    display: grid;
+    width: auto;
+    grid-template-columns: 4fr 1fr;
+    column-gap: 30px;
+    margin: 25px 100px 25px 100px;
+}
+
+.container>div {
+    background-color: white;
+    border-radius: 15px;
+    border-collapse: separate;
+}
+
+#thisPostCell .headerTop {
+    background-color: #E5EAF5;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#thisPostCell .title {
+    margin: 0 1rem 0 1rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+#thisPostCell .subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1.1em;
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+.compacthr {
+    margin: 0 0 0 0;
+}
+
+#thisPostCell .headerImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5em;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+#thisPostCell .headerImgSubtitle {
+    display: table;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.7em;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+#thisPostCell .infoLine {
+    background-color: #E5EAF5;
+}
+
+#thisPostCell .infoLine span {
+    display: table;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.85em;
+    margin: auto;
+}
+
+#thisPostCell .articleText {
+    margin: 1.2em 2.2em 1.5em 2.2em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+#otherPostsCell .headerTop {
+    background-color: #E5EAF5;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#otherPostsCell .headerTop span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.otherPostBox {
+    width: auto;
+    height: auto;
+    margin: 0.9em 0.7em 0.9em 0.7em;
+    padding: 0.5em 0.7em 0.5em 0.7em;
+    border: 2px #9ca1ad solid;
+    border-radius: 15px;
+    background-color: #A0D2EB;
+}
+
+.otherPostBox {
+    /* white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis; */
+    line-height: 1.7;
+}
+
+.otherPostBox .title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.otherPostBox .date {
+    float: right;
+}
+
+.otherPostBox #line2 {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 0.8em;
+}

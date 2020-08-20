@@ -1,0 +1,9 @@
+Light Blue: #A0D2EB
+Light Grey: #E5EAF5
+Light Purple: #D0BDF4
+Medium Purple: #8458B3
+Dark Purple: #494D5F
+
+My dark purple: #1a001a
+
+hr: #9c9c9c

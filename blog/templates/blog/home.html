@@ -6,66 +6,68 @@
 {% endblock %}
 
 {% block content %}
-    <div id="carousel"> 
-        <img src= "{% static 'blog/images/me.jpg' %}" class="slide"/>
-
-        <img src= "{% static 'blog/images/bullring.jpg' %}" class="slide"/>
-
-        <img src= "{% static 'blog/images/grand_central.jpg' %}" class="slide"/>
-
-        <img src= "{% static 'blog/images/keyboard.jpg' %}" class="slide"/>
-
-        <img src= "{% static 'blog/images/uob.jpg' %}" class="slide"/>
+{% comment %} Slideshow adapted from 'Automatic Slideshow' at https://www.w3schools.com/howto/howto_js_slideshow.asp {% endcomment %}
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 5</div>
+            <img src="{% static 'blog/images/ball.jpg' %}" alt="Thomas at the CSS Ball 2020">
+        <div class="text">© Thomas Davies, 2019</div>
     </div>
 
-    <script> 
-        startImageTransition(); 
-  
-        function startImageTransition() { 
-            var images = document.getElementsByClassName("slide"); 
-  
-            for (var i = 0; i < images.length; ++i) { 
-                images[i].style.opacity = 1; 
-            } 
-  
-            var top = 1; 
-            var cur = images.length - 1; 
-  
-            setInterval(changeImage, 3000); 
-  
-            async function changeImage() { 
-                var nextImage = (1 + cur) % images.length; 
-  
-                images[cur].style.zIndex = top + 1; 
-                images[nextImage].style.zIndex = top; 
-  
-                await transition(); 
-  
-                images[cur].style.zIndex = top;
-                images[nextImage].style.zIndex = top + 1; 
-                top = top + 1; 
-                images[cur].style.opacity = 1; 
-                cur = nextImage; 
-            } 
-  
-            function transition() { 
-                return new Promise(function(resolve, reject) { 
-                    var del = 0.01; 
-  
-                    var id = setInterval(changeOpacity, 10); 
-  
-                    function changeOpacity() { 
-                        images[cur].style.opacity -= del; 
-                        if (images[cur].style.opacity <= 0) { 
-                            clearInterval(id); 
-                            resolve(); 
-                        } 
-                    } 
-  
-                }) 
-            } 
-        } 
-    </script> 
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 5</div>
+            <img src="{% static 'blog/images/bullring.jpg' %}" alt="Exterior shot of the Bullring shopping centre, Birmingham">
+        <div class="text">© <a href="https://pxhere.com/en/photo/388469">Phil Dolby, 2017</a></div>
+    </div>
 
-    <div id="credit"><p>Photo Credit</p></div>
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 5</div>
+            <img src="{% static 'blog/images/grand_central.jpg' %}" alt="Exterior shot of Grand Central train station, Birmingham">
+        <div class="text">© <a href="https://www.flickr.com/photos/159522146@N06/26843909988">Flicker user 'newkemall', 2018</a></div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 5</div>
+            <img src="{% static 'blog/images/keyboard.jpg' %}" alt="Close-up of a computer keyboard">
+        <div class="text">© <a href="https://pxhere.com/en/photo/898003">PxHere, 2017</a></div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">5 / 5</div>
+            <img src="{% static 'blog/images/uob.jpg' %}" alt="The University of Birmingham">
+        <div class="text">© <a href="https://commons.wikimedia.org/wiki/File:University_of_Birmingham_-_panoramio.jpg">Tanya Dedyukhina, 2011</a></div>
+    </div>
+</div>
+
+<br>
+
+<div id="dotBox">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+  <span class="dot"></span> 
+  <span class="dot"></span>
+</div>
+
+<script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 10000); // Change image every 10 seconds
+    }
+</script>
 {% endblock %}

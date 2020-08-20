@@ -3,8 +3,47 @@
 
 {% block headtags %}
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/posts.css' %}">
+    <script type="text/javascript" src="{% static 'blog/js/posts.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-    <p>Posts Page</p>
+    <div class="container">
+        <div id="thisPostCell">
+            <div class="headerTop">
+                <h1 class="title">{{thispost.title}}</h1>
+                <h3 class="subtitle">{{thispost.subtitle}}</h3>
+            </div>
+            <hr class="compacthr">
+            <img class="headerImg" src={{thispost.header_image.url}} alt={{thispost.header_image_subtitle}}>
+            <span class="headerImgSubtitle">{{thispost.header_image_subtitle}}</span>
+            <div class="infoLine">
+                <hr>
+                <span><strong>BY:</strong>  {{thispost.author.get_full_name}}  |  <strong>PUBLISHED:</strong>   {{thispost.published_date | date:"f A, d F o"}}</span>
+                <hr>
+            </div>
+            
+            <p class="articleText">{{thispost.text | linebreaksbr}}<p>
+        </div>
+
+        <div id="otherPostsCell">
+            <div class="headerTop">
+                <span>Other Posts</span>
+            </div>
+            <hr class="compacthr">
+
+            <div id="otherPostsList">
+                {% for post in otherposts %}
+                    <div onclick="location.href='{% url 'post_detail' pk=post.pk %}'" class="otherPostBox noselect">
+                    
+                        <span class="title">{{ post.title }}</span><br>
+
+                        <div id="line2">
+                            <span class="author">{{post.author.get_full_name}}</span>
+                            <span class="date">{{post.published_date | date:"d F o"}}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
