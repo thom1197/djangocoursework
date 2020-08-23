@@ -1,7 +1,8 @@
 {% load static %}
 <!DOCTYPE html>
 <head>
-    <title>CHANGE THIS TITLE</title>
+    <title>Bridging Coursework</title>
+    <link rel="icon" type="img/png" href="{% static 'blog/images/favicon64.png' %}"/>
     <meta name="author" content="Thomas Davies">
     <meta name="description" content="This website holds my blog posts and CV for the bridging coursework">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/base.css' %}">
@@ -21,9 +22,8 @@
 
             <ul class="navigation">
                 <a href="{% url 'home' %}"><li id="home_link">Home</li></a>
-                <a href="{% url 'about' %}"><li id="about_link">About</li></a>
                 <a href="{% url 'post_detail' pk=latestpost.pk %}"><li id="posts_link">Posts</li></a>
-                <a href="{% url 'gallery' %}"><li id="gallery_link">Gallery</li></a>
+                <a href="{% url 'cv' %}"><li id="cv_link">Digital CV</li></a>
                 <a href="{% url 'contact' %}"><li id="contact_link">Contact</li></a>
             </ul>
         </div>

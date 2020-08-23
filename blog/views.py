@@ -1,14 +1,9 @@
-from django.shortcuts import render
 from blog.models import Post
-
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 def home_view(request):
     return render(request, 'blog/home.html', {})
-
-def about_view(request):
-    return render(request, 'blog/about.html', {})
 
 def get_latest_post(request):
     published_posts = Post.objects.exclude(published_date=None).order_by('-published_date')
@@ -26,8 +21,8 @@ def post_detail(request, pk):
     }
     return render(request, 'blog/posts.html', posts_context)
 
-def gallery_view(request):
-    return render(request, 'blog/gallery.html', {})
+def cv_view(request):
+    return render(request, 'blog/cv.html', {})
 
 def contact_view(request):
     return render(request, 'blog/contact.html', {})
