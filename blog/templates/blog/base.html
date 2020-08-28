@@ -22,7 +22,7 @@
 
             <ul class="navigation">
                 <a href="{% url 'home' %}"><li id="home_link">Home</li></a>
-                <a href="{% url 'post_detail' pk=latestpost.pk %}"><li id="posts_link">Posts</li></a>
+                <a href="{% url 'blog:post_detail' pk=latestpost.pk %}"><li id="posts_link">Posts</li></a>
                 <a href="{% url 'cv' %}"><li id="cv_link">Digital CV</li></a>
                 <a href="{% url 'contact' %}"><li id="contact_link">Contact</li></a>
             </ul>
